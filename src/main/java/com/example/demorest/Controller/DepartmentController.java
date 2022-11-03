@@ -36,14 +36,14 @@ public class DepartmentController {
         return Response.status(200).entity(depts).build();
     }
 
-    @GET
-    @Path("/get_employees/{dept_id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response get_department(@PathParam("dept_id") int d_id){
-        System.out.println(d_id);
-
-        List<Employee> employees = deptDAO.employeeListInDepartment(d_id);
-
-        return Response.status(200).entity(employees).build();
-    }
+//    @GET
+//    @Path("/get_employees/{dept_id}")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response get_department(@PathParam("dept_id") int d_id){
+//        System.out.println(d_id);
+//
+//        List<Employee> employees = deptDAO.employeeListInDepartment(d_id);
+//
+//        return Response.status(200).entity(employees).build();
+//    }
 }

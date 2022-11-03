@@ -49,15 +49,4 @@ public class DepartmentDAOImpl implements DepartmentDAO {
             return null;
         }
     }
-
-    @Override
-    public List<Employee> employeeListInDepartment(int deptID) {
-        try (Session session = HibernateSessionUtil.getSession()) {
-            Department deptObj=session.get(Department.class, deptID);
-            return deptObj.getEmployeesList();
-        } catch (HibernateException exception) {
-            System.out.print(exception.getLocalizedMessage());
-        }
-        return null;
-    }
 }

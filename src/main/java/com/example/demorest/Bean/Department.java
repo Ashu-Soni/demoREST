@@ -17,9 +17,6 @@ public class Department {
     @Column(name="dept_address")
     private String deptAddress;
 
-    @OneToMany(mappedBy = "empDepartment" , fetch = FetchType.EAGER)    // name of class member variable in Employee class; it will be mapped with that variable
-    private List<Employee> employeesList;
-
     public Department() {
     }
 
@@ -53,13 +50,13 @@ public class Department {
         this.deptAddress = deptAddress;
     }
 
-    public List<Employee> getEmployeesList() {
-        return employeesList;
-    }
-
-    public void setEmployeesList(List<Employee> employeesList) {
-        this.employeesList = employeesList;
-    }
+//    public List<Employee> getEmployeesList() {
+//        return employeesList;
+//    }
+//
+//    public void setEmployeesList(List<Employee> employeesList) {
+//        this.employeesList = employeesList;
+//    }
 
     @Override
     public String toString() {

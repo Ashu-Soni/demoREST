@@ -24,9 +24,6 @@ public class Employee {
     @JoinColumn(name="employee_dept_id")
     private Department empDepartment;
 
-    @ManyToMany(mappedBy = "employeesList")
-    private List<Project> projectList;
-
     public Employee(){
 
     }
@@ -85,14 +82,6 @@ public class Employee {
 
     public void setEmpDepartment(Department empDepartment) {
         this.empDepartment = empDepartment;
-    }
-
-    public List<Project> getProjectList() {
-        return projectList;
-    }
-
-    public void setProjectList(List<Project> projectList) {
-        this.projectList = projectList;
     }
 
     // to string to print object as a string otherwise it returns object Hashcode

@@ -1,5 +1,6 @@
 package com.example.demorest.DAO.DAOImplementation;
 
+import com.example.demorest.Bean.Department;
 import com.example.demorest.Bean.Employee;
 import com.example.demorest.DAO.EmployeeDAO;
 import com.example.demorest.Util.HibernateSessionUtil;
@@ -22,6 +23,21 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         } catch (HibernateException exception) {
             System.out.println(exception.getLocalizedMessage());
             return false;
+        }
+    }
+
+    @Override
+    public List<Employee> getEmployee(){
+        try (Session session = HibernateSessionUtil.getSession()){
+            List<Employee> empList = new ArrayList<>();
+            for (final Object d : session.createQuery("from Employee ").list()) {
+                empList.add((Employee) d);
+            }
+            return empList;
+
+        } catch (HibernateException exception) {
+            System.out.print(exception.getLocalizedMessage());
+            return null;
         }
     }
 
